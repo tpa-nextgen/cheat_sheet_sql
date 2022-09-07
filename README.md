@@ -4,4 +4,5 @@
 - [Read](sqlite/sql.info.read.md)
 - [Update](sqlite/sql.info.update.md)
 - [Delete](sqlite/sql.info.delete.md)
+- [DROP (Delete table)](sqlite/sql.info.drop.md)
 - [Program Dot Commands](sqlite/sql.info.commands.md)
