@@ -93,34 +93,34 @@ ____
 
 ### Syntax
 
-Reading data from all tables:
-```sql
-SELECT * FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
-```
+- Reading data from all tables:
+    ```sql
+    SELECT * FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
+    ```
 
-Reading all data from specific table:
-```sql
-SELECT <table_name_x>.* FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
-```
+- Reading all data from specific table:
+    ```sql
+    SELECT <table_name_x>.* FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
+    ```
 
-Reading specific columns from tables:
-```sql
-SELECT <table_name_x1>.<x1_column_name>, <table_name_x2>.<x2_column_name>, ..., <table_name_xn>.<xn_column_name> FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
-```
+- Reading specific columns from tables:
+    ```sql
+    SELECT <table_name_x1>.<x1_column_name>, <table_name_x2>.<x2_column_name>, ..., <table_name_xn>.<xn_column_name> FROM <table_name_1>, <table_name_2>, ..., <table_name_n> WHERE <condition>;
+    ```
 
 ### Examples
 
-Reading data from both tables:
-```sql
-SELECT * FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
-```
+- Reading data from both tables:
+    ```sql
+    SELECT * FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
+    ```
 
-Reading data just from the ___cars___ table:
-```sql
-SELECT cars.* FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
-```
+- Reading data just from the ___cars___ table:
+    ```sql
+    SELECT cars.* FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
+    ```
 
-Reading specific data from tables:
-```sql
-SELECT cars.id, car_models.model_name, cars.mileage FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
-```
+- Reading specific data from tables:
+    ```sql
+    SELECT cars.id, car_models.model_name, cars.mileage FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
+    ```
