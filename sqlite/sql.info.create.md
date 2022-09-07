@@ -210,3 +210,57 @@ CREATE TABLE cars (
     mileage INTEGER DEFAULT 0
 );
 ```
+
+## Unique values
+
+Used to ensure that the values of specified column or group of columns are be unique.
+
+Main differences:
+|Feature|`PRIMARY KEY`|`UNIQUE`|
+|-|-|-|
+|Accepts NULL|X|V|
+|Can be used multiple times in one table|X|V|
+
+### Syntax - single column
+
+```sql
+CREATE TABLE <table_name> (
+    <column_name_1> <data_type_1> UNIQUE,
+    <column_name_2> <data_type_2>,
+    ...,
+    <column_name_n> <data_type_n>
+);
+```
+
+### Example - single column
+
+```sql
+CREATE TABLE car_models (
+    id INTEGER,
+    model_name TEXT UNIQUE,
+    date_of_introduction TEXT
+);
+```
+
+### Syntax - multiple columns
+
+```sql
+CREATE TABLE <table_name> (
+    <column_name_1> <data_type_1>,
+    <column_name_2> <data_type_2>,
+    ...,
+    <column_name_n> <data_type_n>,
+    UNIQUE (<unique_column_name_1>, <unique_column_name_2>, ..., <unique_column_name_n>)
+);
+```
+
+### Example - multiple columns
+
+```sql
+CREATE TABLE cars (
+    id INTEGER,
+    model_name TEXT UNIQUE,
+    date_of_introduction TEXT,
+    UNIQUE (model_name, date_of_introduction)
+);
+```
