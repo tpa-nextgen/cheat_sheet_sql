@@ -176,6 +176,6 @@ CREATE TABLE cars (
     model_id INTEGER,
     factory_id INTEGER,
     factory_release_timestamp INTEGER DEFAULT (unixepoch()),
-    mileage DEFAULT 0
+    mileage INTEGER DEFAULT 0
 );
 ```
