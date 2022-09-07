@@ -124,3 +124,64 @@ ____
     ```sql
     SELECT cars.id, car_models.model_name, cars.mileage FROM cars, car_models WHERE cars.model_id = car_models.id AND car_models.model_name = "Vitz";
     ```
+
+____
+
+## Join
+
+More convenient way to read from multiple tables is to use `JOIN` keywords.
+
+### Syntax
+
+```sql
+SELECT * FROM <table_name_1>
+JOIN <table_name_2> ON <table_name_1>.<column_name_2> = <table_name_2>.<foreign_column_name>
+JOIN <table_name_3> ON <table_name_1>.<column_name_3> = <table_name_3>.<foreign_column_name>
+...
+JOIN <table_name_n> ON <table_name_1>.<column_name_n> = <table_name_n>.<foreign_column_name>;
+```
+
+### Example
+
+```sql
+SELECT * FROM cars JOIN car_models ON cars.model_id = car_models.id;
+```
+
+___
+
+## Inner join
+
+### Syntax
+
+```sql
+SELECT * FROM <table_name_1>
+INNER JOIN <table_name_2> ON <table_name_1>.<column_name_2> = <table_name_2>.<foreign_column_name>
+INNER JOIN <table_name_3> ON <table_name_1>.<column_name_3> = <table_name_3>.<foreign_column_name>
+...
+INNER JOIN <table_name_n> ON <table_name_1>.<column_name_n> = <table_name_n>.<foreign_column_name>;
+```
+
+### Example
+```sql
+SELECT * FROM cars INNER JOIN car_models ON cars.model_id = car_models.id;
+```
+
+____
+
+## Left join
+
+### Syntax
+
+```sql
+SELECT * FROM <table_name_1>
+LEFT JOIN <table_name_2> ON <table_name_1>.<column_name_2> = <table_name_2>.<foreign_column_name>
+LEFT JOIN <table_name_3> ON <table_name_1>.<column_name_3> = <table_name_3>.<foreign_column_name>
+...
+LEFT JOIN <table_name_n> ON <table_name_1>.<column_name_n> = <table_name_n>.<foreign_column_name>;
+```
+
+### Example
+
+```sql
+SELECT * FROM cars LEFT JOIN car_models ON cars.model_id = car_models.id;
+```
