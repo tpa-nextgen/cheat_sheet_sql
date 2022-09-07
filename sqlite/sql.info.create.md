@@ -29,7 +29,11 @@ CREATE TABLE cars (
 
 ## Primary Key
 
-### Syntax
+It is used to identify the rows in the table and ensure their uniqueness.
+
+___Each table can have only one primary key but in can consist of multiple columns.___
+
+### Syntax - single column
 
 ```sql
 CREATE TABLE <table_name> (
@@ -40,7 +44,7 @@ CREATE TABLE <table_name> (
 );
 ```
 
-### Example
+### Example - single column
 
 ```sql
 CREATE TABLE cars (
@@ -49,6 +53,31 @@ CREATE TABLE cars (
     factory_id INTEGER,
     factory_release_timestamp INTEGER,
     mileage INTEGER
+);
+```
+
+### Syntax - multiple columns
+
+```sql
+CREATE TABLE <table_name> (
+    <column_name_1> <data_type_1>,
+    <column_name_2> <data_type_2>,
+    ...,
+    <column_name_n> <data_type_n>,
+    PRIMARY KEY (<key_column_name_1>, <key_column_name_2>, ..., <key_column_name_n>)
+);
+```
+
+### Example - multiple columns
+
+```sql
+CREATE TABLE cars (
+    id INTEGER,
+    model_id INTEGER,
+    factory_id INTEGER,
+    factory_release_timestamp INTEGER,
+    mileage INTEGER,
+    PRIMARY KEY (id, factory_release_timestamp)
 );
 ```
 
@@ -84,6 +113,8 @@ CREATE TABLE cars (
 ---
 
 ## Foreign keys
+
+Foreign keys are the way to reference primary keys in other tables. While inserting data it will be required that the referenced key value exists for any row in the referenced table.
 
 ### Syntax
 
